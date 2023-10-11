@@ -6,6 +6,7 @@ public abstract class Account implements IBaseRate {
 	String socialSecurityNumber;
 	double balance;
 	
+	static int index = 10000;
 	String accountNumber;
 	double rate;
 	
@@ -16,7 +17,25 @@ public abstract class Account implements IBaseRate {
 		this.socialSecurityNumber = socialSecurityNumber;
 		this.balance = balance;
 		System.out.println(name + " " + socialSecurityNumber + " " + balance);
+		
+		// Set account number
+		index++;
+		this.accountNumber = setAccountNumber();
+//		System.err.println("Accaunt number: " + this.accountNumber);
+		
 	}
+	
+	private String setAccountNumber() {
+		int length = socialSecurityNumber.length();
+		String lastTwoOfSocialSecurityNumber = socialSecurityNumber.substring(length-2, length);
+		int uniqueID = index;
+		int randomNumber = (int) (Math.random() * Math.pow(10, 3));
+		return lastTwoOfSocialSecurityNumber + uniqueID + randomNumber;
+	}
+	
+	
+	
+	
 	// List common methods
 	
 }
