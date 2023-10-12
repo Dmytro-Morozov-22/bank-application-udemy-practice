@@ -5,18 +5,28 @@ public class Savings extends Account {
 	int safetyDepositBoxID;
 	int safetyDepositBoxKey;
 	
-	
 	// Constructor to initialize settings for the Savings properties
 	public Savings(String name, String socialSecurityNumber, double initDeposit) {
 		super(name, socialSecurityNumber, initDeposit);
-		increamentAccountNumber();
-	}
-	
-	private void increamentAccountNumber() {
 		accountNumber = "1" + accountNumber;
-		System.err.println("Accaunt number: " + this.accountNumber);
-		System.out.println("NEW SAVINGS ACCOUNT");
+		setSafetyDepositBox();
 	}
 	
-	// List any methods specific to savings account
+	private void setSafetyDepositBox() {
+		safetyDepositBoxID = (int) (Math.random() * Math.pow(10, 3));
+		safetyDepositBoxKey = (int) (Math.random() * Math.pow(10, 4));
+	}
+	
+	// List any methods specific to savings account	
+	@Override
+	public void showInfo() {
+		super.showInfo();
+		System.out.println(
+				" Your Savings Account Features:" + 
+				"\n Safety Deposit Box ID: " + safetyDepositBoxID + 
+				"\n Safety Deposit Box Key: " + safetyDepositBoxKey
+				);
+	}
+	
+
 }

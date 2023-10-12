@@ -6,6 +6,10 @@ public class BankAccountApp {
 		Checking chkacc1 = new Checking("Dmytro Morozov", "123456789", 1500);
 		Savings saveacc1 = new Savings("Olha Morozova", "987654321", 2500);
 
+		chkacc1.showInfo();
+		System.out.println("---------------------------");
+		saveacc1.showInfo();
+		
 	}
 
 }
