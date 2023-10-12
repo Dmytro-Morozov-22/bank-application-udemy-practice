@@ -1,4 +1,4 @@
-# Application should do the following:
+# Application <span style="color: #2DB7F3;">s</span><span style="color: #F5D736;">h</span><span style="color: #F37B21;">o</span><span style="color: #F20F6A;">u</span><span style="color: #AAF73D;">l</span><span style="color: #8A00F1;">d</span> do the following:
 * Read a .csv file of names, social security numbers, account type, and initial deposit
 * Use a proper data structure to hold all these accounts
 * Both savings and checking accounts share the following properties:<br />
