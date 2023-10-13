@@ -16,14 +16,14 @@ public abstract class Account implements IBaseRate {
 		this.name = name;
 		this.socialSecurityNumber = socialSecurityNumber;
 		this.balance = balance;
-//		System.out.println(name + " " + socialSecurityNumber + " " + balance);
 		
 		// Set account number
 		index++;
 		this.accountNumber = setAccountNumber();
-//		System.err.println("Accaunt number: " + this.accountNumber);
-		
+		setRate();
 	}
+	
+	public abstract void setRate();
 	
 	private String setAccountNumber() {
 		int length = socialSecurityNumber.length();
@@ -39,7 +39,9 @@ public abstract class Account implements IBaseRate {
 		System.out.println(
 				"NAME: " + name + 
 				"\nACCOUNT NUMBER: " + accountNumber + 
-				"\nBALANCE: " + balance);
+				"\nBALANCE: " + balance + 
+				"\nRATE: " + rate + "%"
+				);
 	}
 	
 }
