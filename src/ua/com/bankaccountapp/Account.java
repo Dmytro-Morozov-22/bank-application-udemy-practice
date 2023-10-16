@@ -33,8 +33,29 @@ public abstract class Account implements IBaseRate {
 		return lastTwoOfSocialSecurityNumber + uniqueID + randomNumber;
 	}
 	
+	// List common methods - transactions
+	public void deposit(double amount) {
+		this.balance = balance + amount;
+		System.out.println("Depositing $" + amount);
+		printBalance();
+	}
 	
-	// List common methods
+	public void withdraw(double amount) {
+		this.balance = balance - amount;
+		System.out.println("Withdrawing $" + amount);
+		printBalance();
+	}
+	
+	public void transfer(String toWhere, double amount) {
+		this.balance = balance - amount;
+		System.out.println("Transfering $" + amount + " to " + toWhere);
+		printBalance();
+	}
+	
+	public void printBalance() {
+		System.out.println("Your balance is now: $" + balance);
+	}
+	
 	public void showInfo() {
 		System.out.println(
 				"NAME: " + name + 

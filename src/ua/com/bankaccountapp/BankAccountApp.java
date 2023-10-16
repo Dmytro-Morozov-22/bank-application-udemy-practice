@@ -10,6 +10,10 @@ public class BankAccountApp {
 		System.out.println("---------------------------");
 		saveacc1.showInfo();
 		
+		saveacc1.deposit(5000);
+		saveacc1.withdraw(200);
+		saveacc1.transfer("Brokerage", 3000);
+		
 	}
 
 }
