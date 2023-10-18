@@ -1,11 +1,12 @@
 package ua.com.bankaccountapp;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class BankAccountApp {
 
 	public static void main(String[] args) {
-		
+		List<Account> accounts = new LinkedList<>();
 		
 		String file = "src/ua/com/utilities/files/NewBankAccounts.csv";
 	
@@ -16,32 +17,21 @@ public class BankAccountApp {
 			String sSN = accountHolder[1];
 			String accountType = accountHolder[2];
 			double initDeposit = Double.parseDouble(accountHolder[3]);
-			System.out.println(name + " " + sSN + " " + accountType + " $" + initDeposit);
 			if(accountType.equals("Savings")) {
-				System.out.println("OPEN A SAVINGS ACCOUNT");
+				accounts.add(new Savings(name, sSN, initDeposit));
 			} else if (accountType.equals("Checking")) {
-				System.out.println("OPEN A CHECKING ACCOUNT");
+				accounts.add(new Checking(name, sSN, initDeposit));
 			} else {
 				System.out.println("ERROR READING ACCOUNT TYPE");
 			}
 			
-			
-			
-			System.out.println("---------------------");
 		}
 		
-//		Checking chkacc1 = new Checking("Dmytro Morozov", "123456789", 1500);
-//		Savings saveacc1 = new Savings("Olha Morozova", "987654321", 2500);
-//
-//		saveacc1.compound();
-//		
-//		saveacc1.showInfo();
-//		System.out.println("---------------------------");
-//		chkacc1.showInfo();
-		
-		
-		
-		
+		for(Account acc : accounts) {
+			acc.showInfo();
+			System.out.println("---------------------------------");
+		}
+			
 	}
 
 }
